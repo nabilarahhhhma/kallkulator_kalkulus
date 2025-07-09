@@ -1,0 +1,35 @@
+/* style.css - tema cute pink aesthetic */
+
+body {
+    background-color: #fff0f5 !important;
+    color: #c71585;
+    font-family: "Comic Sans MS", cursive;
+}
+
+h1, h2, h3, h4 {
+    color: #ff69b4;
+    font-weight: bold;
+}
+
+.stTextInput > div > div > input {
+    background-color: #ffe6f0;
+    color: #ff1493;
+    border: 2px solid #ff69b4;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.stButton > button {
+    background-color: #ffb6c1;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-weight: bold;
+}
+
+.stAlert {
+    background-color: #ffe4e1;
+    border-radius: 10px;
+    color: #d63384;
+}
