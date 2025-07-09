@@ -1,43 +1,56 @@
 import streamlit as st
-
-# Tambahin CSS lucu
-with open("style.css") as f:
-    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
-st.title("🌸 Kalkulator Kalkulus 🌸")
-
-import streamlit as st
 import sympy as sp
 import matplotlib.pyplot as plt
 import numpy as np
+import base64
 
 # Konfigurasi halaman Streamlit
 st.set_page_config(page_title="Kalkulator Integral & Turunan", page_icon="🌸", layout="centered")
 
 # CSS tema pink cute aesthetic
-st.markdown("""
-    <style>
-        html, body, [class*="css"]  {
-            background-color: #ffe6f0;
-            font-family: 'Comic Sans MS', cursive;
-        }
-        .main-title {
-            text-align: center;
-            color: #e75480;
-            font-size: 36px;
-            font-weight: bold;
-        }
-        .subtitle {
-            text-align: center;
-            color: #c71585;
-            font-size: 20px;
-        }
-    </style>
-""", unsafe_allow_html=True)
+with open("style.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+# Fungsi tampilan login cute aesthetic
+def login_ui():
+    st.markdown("""
+        <div style="text-align:center; padding:20px;">
+            <img src="https://cdn-icons-png.flaticon.com/512/2922/2922561.png" width="100"/>
+            <h2 style="color:#ff69b4;">Welcome Princess~ 🌸</h2>
+            <p style="color:#d63384; font-style:italic;">Login dulu yuk sebelum hitung-hitungan cantik 💕</p>
+        </div>
+    """, unsafe_allow_html=True)
+
+    username = st.text_input("Username", placeholder="Masukkan username kamu...")
+    password = st.text_input("Password", type="password", placeholder="Masukkan password lucu...")
+
+    if st.button("Masuk"):
+        if username == "bila" and password == "cantik":
+            st.session_state.login = True
+            st.success("Yay kamu berhasil masuk! ")
+        else:
+            st.error("Ups! Username atau password salah~ coba lagi yaa")
+
+# Fungsi tombol logout
+def logout_ui():
+    if st.button("Keluar"):
+        st.session_state.login = False
+        st.rerun()
+
+# Cek status login dan tampilkan login page lebih awal
+if 'login' not in st.session_state:
+    st.session_state.login = False
+
+if st.session_state.login is False:
+    login_ui()
+    st.stop()  # menghentikan eksekusi supaya user ga bisa lanjut sebelum login
 
 # Judul utama
-st.markdown('<div class="main-title">🌸 Kalkulator Integral & Turunan 🌸</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">Masukkan fungsi matematika kamu di bawah ini yaah!</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-title">🌸 Kalkulator Integral 🌸</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">Masukkan fungsi matematika kamu di bawah ini yah!</div>', unsafe_allow_html=True)
+
+# Tombol Logout
+logout_ui()
 
 # Input fungsi dari user
 expr_input = st.text_input("Masukkan fungsi aljabar (misalnya: x**2 + 3*x + 2)", value="x**2 + 2*x + 1")
