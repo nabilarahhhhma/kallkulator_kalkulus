@@ -37,7 +37,7 @@ st.markdown("""
 
 # Judul utama
 st.markdown('<div class="main-title">🌸 Kalkulator Integral & Turunan 🌸</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">Masukkan fungsi matematika kamu di bawah ini dan lihat hasilnya dengan gaya pink yang lucu~!</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">Masukkan fungsi matematika kamu di bawah ini yaah!</div>', unsafe_allow_html=True)
 
 # Input fungsi dari user
 expr_input = st.text_input("Masukkan fungsi aljabar (misalnya: x**2 + 3*x + 2)", value="x**2 + 2*x + 1")
