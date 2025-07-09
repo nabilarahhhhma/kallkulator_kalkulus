@@ -4,7 +4,7 @@ import streamlit as st
 with open("style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-st.title("🌸 Kalkulator Kalkulus Cute 🌸")
+st.title("🌸 Kalkulator Kalkulus 🌸")
 
 import streamlit as st
 import sympy as sp
@@ -36,7 +36,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Judul utama
-st.markdown('<div class="main-title">🌸 Kalkulator Integral & Turunan Cute Edition 🌸</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-title">🌸 Kalkulator Integral & Turunan 🌸</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Masukkan fungsi matematika kamu di bawah ini dan lihat hasilnya dengan gaya pink yang lucu~!</div>', unsafe_allow_html=True)
 
 # Input fungsi dari user
