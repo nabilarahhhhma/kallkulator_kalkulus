@@ -67,9 +67,6 @@ if st.session_state.login is False:
 st.markdown('<div class="main-title">🌸 Kalkulator Integral & Turunan 🌸</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Masukkan fungsi matematika kamu di bawah ini!</div>', unsafe_allow_html=True)
 
-# Tombol Logout di kanan bawah
-logout_ui()
-
 # Input fungsi dari user
 expr_input = st.text_input("Masukkan fungsi aljabar (misalnya: x**2 + 3*x + 2)", value="x**2 + 2*x + 1")
 x = sp.symbols('x')
@@ -100,3 +97,7 @@ try:
 
 except Exception as e:
     st.error("Fungsi tidak valid. Coba periksa kembali input kamu yah!")
+
+# Tombol Logout di kanan bawah (sticky)
+logout_ui()
+
