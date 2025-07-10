@@ -1,13 +1,41 @@
 body {
-    background-color: #fffafc;
-    font-family: 'Playfair Display', serif;
-    color: #804d5f;
+    background-color: #fff0f5;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: #5c3c45;
 }
-
-button {
-    background-color: #f9d5d3;
-    color: #4c3b4d;
-    font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
-    border-radius: 8px;
+.main-title {
+    color: #ff80ab;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+.subtitle {
+    color: #b56f77;
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+.stTextInput > div > div > input {
+    background-color: #ffe6f0;
+    color: #b56f77;
+    border: 2px solid #ffb6c1;
+    border-radius: 12px;
+    padding: 10px;
+}
+.stButton > button {
+    background-color: #ffb6c1;
+    color: white;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 10px 20px;
+    transition: 0.3s ease;
+}
+.stButton > button:hover {
+    background-color: #ff99b6;
+}
+.stAlert {
+    border-radius: 12px;
+    font-weight: bold;
 }
