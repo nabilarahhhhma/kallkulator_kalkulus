@@ -8,7 +8,7 @@ import base64
 st.set_page_config(page_title="Kalkulator Integral & Turunan", page_icon="🎀", layout="centered")
 
 # Panggil file CSS girly soft
-with open("style_girly_soft.css") as f:
+with open("style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 # Tambahkan background dengan CSS khusus
