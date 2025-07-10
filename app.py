@@ -7,32 +7,43 @@ import base64
 # Konfigurasi halaman Streamlit
 st.set_page_config(page_title="Kalkulator Integral & Turunan", page_icon="🌸", layout="centered")
 
-# CSS tema pink cute aesthetic
+# CSS tema soft pink + brown aesthetic
 with open("style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+# Tambahkan background gambar abstrak soft pink
+st.markdown("""
+    <style>
+        body {
+            background-image: url('https://i.pinimg.com/originals/9d/52/3e/9d523e7cfd3821b3bbd4528f20664a8d.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
 # Fungsi tampilan login cute aesthetic
 
 def login_ui():
     st.markdown("""
         <div style="text-align:center; padding:20px;">
-            <img src="https://cdn-icons-png.flaticon.com/512/2922/2922561.png" width="100"/>
-            <h2 style="color:#ff69b4;">Hallo, Selamat Datang! 🌸</h2>
-            <p style="color:#d63384; font-style:italic;">Login dulu yuk sebelum hitung-hitungan cantik</p>
+            <img src="https://cdn-icons-png.flaticon.com/512/2922/2922510.png" width="100"/>
+            <h2 style="color:#ff69b4;">Welcome! ✨</h2>
+            <p style="color:#b56f77; font-style:italic;">Login dulu yuk sebelum hitung-hitungan lucu 🐻</p>
         </div>
     """, unsafe_allow_html=True)
 
     with st.form("login_form"):
         username = st.text_input("Username", placeholder="Masukkan username kamu...")
-        password = st.text_input("Password", type="password", placeholder="Masukkan password lucu...")
-        masuk = st.form_submit_button("Masuk")
+        password = st.text_input("Password", type="password", placeholder="Masukkan password kamu...")
+        masuk = st.form_submit_button("Masuk 🐾")
 
         if masuk:
             if username == "bila" and password == "cantik":
                 st.session_state.login = True
-                st.success("Yay kamu berhasil masuk!")
+                st.success("Yay kamu berhasil masuk~! 🐻")
             else:
-                st.error("Ups! Username atau password salah~ coba lagi yaah")
+                st.error("Ups! Username atau password salah, coba lagi yaa 🙈")
 
 # Fungsi tombol logout di kanan bawah layar (sticky position)
 def logout_ui():
@@ -47,8 +58,8 @@ def logout_ui():
         </style>
         <div id='logout-container'>
             <form action="" method="post">
-                <button type="submit" name="logout" style="background-color: #ffb6c1; color: white; padding: 10px 20px; border: none; border-radius: 10px; font-weight: bold;">
-                    Keluar
+                <button type="submit" name="logout" style="background-color: #e6b8af; color: white; padding: 10px 20px; border: none; border-radius: 10px; font-weight: bold;">
+                    Keluar~ 🧸
                 </button>
             </form>
         </div>
@@ -65,9 +76,9 @@ if st.session_state.login is False:
     login_ui()
     st.stop()  # menghentikan eksekusi supaya user ga bisa lanjut sebelum login
 
-# Judul utama
-st.markdown('<div class="main-title">🌸 Kalkulator Integral & Turunan 🌸</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">Masukkan fungsi matematika kamu di bawah ini!</div>', unsafe_allow_html=True)
+# Judul utama dengan ikon lucu
+st.markdown('<div class="main-title">🍬 Kalkulator Integral & Turunan 🍬 🧋</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">Masukkan fungsi matematika kamu!</div>', unsafe_allow_html=True)
 
 # Input fungsi dari user
 expr_input = st.text_input("Masukkan fungsi aljabar (misalnya: x**2 + 3*x + 2)", value="x**2 + 2*x + 1")
@@ -90,9 +101,9 @@ try:
     df = sp.lambdify(x, turunan, modules=['numpy'])
 
     fig, ax = plt.subplots(figsize=(6, 4))
-    ax.plot(x_vals, f(x_vals), label='Fungsi Asli', color='#ff69b4')
-    ax.plot(x_vals, df(x_vals), label='Turunannya', linestyle='--', color='#ff1493')
-    ax.set_title("Grafik Fungsi dan Turunan", fontsize=14, color='#c71585')
+    ax.plot(x_vals, f(x_vals), label='Fungsi Asli', color='#ff9aa2')
+    ax.plot(x_vals, df(x_vals), label='Turunannya', linestyle='--', color='#d28e8e')
+    ax.set_title("Grafik Fungsi dan Turunan", fontsize=14, color='#b56f77')
     ax.grid(True, linestyle='dashed', alpha=0.3)
     ax.legend()
     st.pyplot(fig)
