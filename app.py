@@ -41,7 +41,7 @@ def login_ui():
         if masuk:
             if username == "bila" and password == "cantik":
                 st.session_state.login = True
-                st.success("Yay kamu berhasil masuk~! 🐻")
+                st.success("Yay kamu berhasil masuk! 🐻")
             else:
                 st.error("Ups! Username atau password salah, coba lagi yaa 🙈")
 
@@ -59,7 +59,7 @@ def logout_ui():
         <div id='logout-container'>
             <form action="" method="post">
                 <button type="submit" name="logout" style="background-color: #e6b8af; color: white; padding: 10px 20px; border: none; border-radius: 10px; font-weight: bold;">
-                    Keluar~ 🧸
+                    Keluar 🧸
                 </button>
             </form>
         </div>
