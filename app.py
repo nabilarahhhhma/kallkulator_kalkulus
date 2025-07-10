@@ -28,7 +28,7 @@ def login_ui():
     st.markdown("""
         <div style="text-align:center; padding:20px;">
             <img src="https://cdn-icons-png.flaticon.com/512/2922/2922510.png" width="100"/>
-            <h2 style="color:#ff69b4;">Welcome! 🧸🎀</h2>
+            <h2 style="color:#ff69b4;">Welcome! 🧸</h2>
             <p style="color:#b56f77; font-style:italic;">Login dulu yuk sebelum hitung-hitungan </p>
         </div>
     """, unsafe_allow_html=True)
@@ -78,7 +78,7 @@ if st.session_state.login is False:
 
 # Judul utama dengan ikon lucu
 st.markdown('<div class="main-title">🍓 Kalkulator Integral & Turunan 🍓</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">Masukkan fungsi matematika kamu 🍓🧸</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">Masukkan fungsi matematika kamu 🧸</div>', unsafe_allow_html=True)
 
 # Input fungsi dari user
 expr_input = st.text_input("Masukkan fungsi aljabar (misalnya: x**2 + 3*x + 2)", value="x**2 + 2*x + 1")
