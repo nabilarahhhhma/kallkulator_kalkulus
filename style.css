@@ -1,78 +1,13 @@
-/* style.css — Tema Girly Pastel */
-
-html, body, [class*="css"] {
-    background-color: #fff0f5 !important; /* pastel pink */
-    color: #a64d79;
-    font-family: "Comic Sans MS", "Segoe UI", cursive;
+body {
+    background-color: #fffafc;
+    font-family: 'Playfair Display', serif;
+    color: #804d5f;
 }
 
-/* Judul Utama */
-.main-title {
-    font-size: 36px;
-    font-weight: bold;
-    color: #ff80ab;
-    text-align: center;
-    padding: 10px;
-}
-
-/* Subtitle */
-.subtitle {
-    color: #cc6699;
-    font-size: 18px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: 20px;
-}
-
-/* Input Box */
-input {
-    background-color: #ffe6f0 !important;
-    color: #cc3366 !important;
-    border: 2px solid #ffb6c1 !important;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-/* Tombol Umum */
 button {
-    background-color: #ffb6c1 !important;
-    color: white !important;
-    font-weight: bold;
-    border: none;
-    border-radius: 12px;
-    padding: 10px 20px;
-    transition: all 0.3s ease;
-}
-
-button:hover {
-    background-color: #ff92b2 !important;
-    transform: scale(1.05);
-}
-
-/* Kotak alert hasil */
-.stAlert {
-    border-radius: 10px;
-    padding: 12px;
-    font-weight: bold;
-}
-
-/* Notifikasi dengan warna pastel */
-.stAlert[data-baseweb="notification"][class*="stAlert-success"] {
-    background-color: #e6ffe6;
-    color: #339966;
-}
-
-.stAlert[data-baseweb="notification"][class*="stAlert-info"] {
-    background-color: #e6f7ff;
-    color: #3399cc;
-}
-
-.stAlert[data-baseweb="notification"][class*="stAlert-warning"] {
-    background-color: #fff9db;
-    color: #cc9900;
-}
-
-/* Grafik */
-.block-container {
-    padding-bottom: 100px; /* supaya tombol logout nggak ketutup */
+    background-color: #f9d5d3;
+    color: #4c3b4d;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 8px;
 }
