@@ -1,55 +1,42 @@
 /* style_girly_soft.css — Tema Soft Pink Girly Lucu */
 
-body {
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    color: #5c3c45;
-}
-
 [data-testid="stAppViewContainer"] {
-    background-image: url('https://i.pinimg.com/originals/9d/52/3e/9d523e7cfd3821b3bbd4528f20664a8d.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+  background-image: url('https://i.pinimg.com/originals/9d/52/3e/9d523e7cfd3821b3bbd4528f20664a8d.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .main-title {
-    color: #ff80ab;
-    text-align: center;
-    font-size: 36px;
-    font-weight: bold;
-    padding-top: 10px;
+  font-size: 32px;
+  text-align: center;
+  color: #ff80ab;
+  font-weight: bold;
 }
 
 .subtitle {
-    color: #b56f77;
-    text-align: center;
-    font-size: 18px;
-    font-style: italic;
-    margin-bottom: 20px;
+  text-align: center;
+  font-style: italic;
+  color: #b56f77;
 }
 
 .stTextInput > div > div > input {
-    background-color: #ffe6f0;
-    color: #b56f77;
-    border: 2px solid #ffb6c1;
-    border-radius: 12px;
-    padding: 10px;
+  background-color: #ffe6f0;
+  color: #b56f77;
+  border: 2px solid #ffb6c1;
+  border-radius: 12px;
+  padding: 10px;
 }
 
 .stButton > button {
-    background-color: #ffb6c1;
-    color: white;
-    font-weight: bold;
-    border-radius: 12px;
-    padding: 10px 20px;
-    transition: 0.3s ease;
+  background-color: #ffb6c1;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 10px 20px;
+  transition: 0.3s ease;
 }
 
 .stButton > button:hover {
-    background-color: #ff99b6;
-}
-
-.stAlert {
-    border-radius: 12px;
-    font-weight: bold;
+  background-color: #ff99b6;
 }
