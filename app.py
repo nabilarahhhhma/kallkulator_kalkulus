@@ -16,24 +16,42 @@ def login_ui():
     st.markdown("""
         <div style="text-align:center; padding:20px;">
             <img src="https://cdn-icons-png.flaticon.com/512/2922/2922561.png" width="100"/>
-            <h2 style="color:#ff69b4;">Welcome Princess~ 🌸</h2>
-            <p style="color:#d63384; font-style:italic;">Login dulu yuk sebelum hitung-hitungan cantik 💕</p>
+            <h2 style="color:#ff69b4;">Selama Datang!🌸</h2>
+            <p style="color:#d63384; font-style:italic;">Login dulu yuk sebelum hitung-hitungan cantik</p>
         </div>
     """, unsafe_allow_html=True)
 
     username = st.text_input("Username", placeholder="Masukkan username kamu...")
     password = st.text_input("Password", type="password", placeholder="Masukkan password lucu...")
 
-    if st.button("Masuk"):
+    # Tombol masuk di kanan bawah
+    st.markdown("""
+        <div style='text-align: right;'>
+            <button onclick="document.getElementById('submit-login').click()" style="background-color: #ffb6c1; color: white; padding: 10px 20px; border: none; border-radius: 10px; font-weight: bold;">
+                Masuk
+            </button>
+        </div>
+    """, unsafe_allow_html=True)
+
+    if st.button("__INTERNAL_MASUK__", key="submit-login", help="", use_container_width=False):
         if username == "bila" and password == "cantik":
             st.session_state.login = True
-            st.success("Yay kamu berhasil masuk! ")
+            st.success("Yay kamu berhasil masuk!")
         else:
-            st.error("Ups! Username atau password salah~ coba lagi yaa")
+            st.error("Ups! Username atau password salah, coba lagi yaa")
 
-# Fungsi tombol logout
+# Fungsi tombol logout di kanan bawah
 def logout_ui():
-    if st.button("Keluar"):
+    st.markdown("""
+        <div style='text-align: right; margin-top: 20px;'>
+            <form action="" method="post">
+                <button type="submit" name="logout" style="background-color: #ffb6c1; color: white; padding: 10px 20px; border: none; border-radius: 10px; font-weight: bold;">
+                    Keluar
+                </button>
+            </form>
+        </div>
+    """, unsafe_allow_html=True)
+    if st.session_state.get("logout"):
         st.session_state.login = False
         st.rerun()
 
@@ -46,10 +64,10 @@ if st.session_state.login is False:
     st.stop()  # menghentikan eksekusi supaya user ga bisa lanjut sebelum login
 
 # Judul utama
-st.markdown('<div class="main-title">🌸 Kalkulator Integral 🌸</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">Masukkan fungsi matematika kamu di bawah ini yah!</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-title">🌸 Kalkulator Integral & Turunan 🌸</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">Masukkan fungsi matematika kamu di bawah ini!</div>', unsafe_allow_html=True)
 
-# Tombol Logout
+# Tombol Logout di kanan bawah
 logout_ui()
 
 # Input fungsi dari user
@@ -81,4 +99,4 @@ try:
     st.pyplot(fig)
 
 except Exception as e:
-    st.error("Fungsi tidak valid. Coba periksa kembali input kamu ya~")
+    st.error("Fungsi tidak valid. Coba periksa kembali input kamu yah!")
