@@ -5,7 +5,7 @@ import numpy as np
 import base64
 
 # Konfigurasi halaman Streamlit
-st.set_page_config(page_title="Kalkulator Integral & Turunan", page_icon="🧸", layout="centered")
+st.set_page_config(page_title="Kalkulator Integral & Turunan", page_icon="🎀", layout="centered")
 
 # Panggil file CSS girly soft
 with open("style_girly_soft.css") as f:
@@ -20,6 +20,11 @@ st.markdown("""
         background-position: center;
         background-attachment: fixed;
     }
+    .logout-container {
+        margin-top: 40px;
+        display: flex;
+        justify-content: flex-start;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -28,30 +33,39 @@ st.markdown("""
 def login_ui():
     st.markdown("""
         <div style="text-align:center; padding:20px;">
-            <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" width="100"/>
-            <h2 style="color:#ff69b4;">Welcome! 🍓</h2>
+            <img src="https://cdn-icons-png.flaticon.com/512/706/706830.png" width="100"/>
+            <h2 style="color:#ff69b4;">Welcome! 🍓🎀✨</h2>
             <p style="color:#b56f77; font-style:italic;">Login dulu yuk sebelum hitung-hitungan 🧸</p>
         </div>
     """, unsafe_allow_html=True)
 
     with st.form("login_form"):
-        username = st.text_input("Username", placeholder="Masukkan username")
-        password = st.text_input("Password", type="password", placeholder="Masukkan password")
+        username = st.text_input("Username", placeholder="Masukkan username kamu...")
+        password = st.text_input("Password", type="password", placeholder="Masukkan password manis...")
         masuk = st.form_submit_button("Masuk")
 
         if masuk:
             if username == "bila" and password == "cantik":
                 st.session_state.login = True
-                st.success("Yay kamu berhasil masuk!")
+                st.success("Yay kamu berhasil masuk! ✨")
             else:
-                st.error("Ups! Username atau password salah, coba lagi yaa 🙈")
+                st.error("Ups! Username atau password salah~ coba lagi yaa 🙈")
 
 # Fungsi tombol logout di kiri bawah sejajar konten
 
 def logout_ui():
-    if st.button("Keluar", key="logout", help="Keluar dari aplikasi"):
+    st.markdown("""
+        <div class="logout-container">
+            <form action="" method="post">
+                <button type="submit" name="logout" style="background-color: #e6b8af; color: white; padding: 10px 20px; border: none; border-radius: 10px; font-weight: bold;">
+                    Keluar
+                </button>
+            </form>
+        </div>
+    """, unsafe_allow_html=True)
+    if st.session_state.get("logout"):
         st.session_state.clear()
-        st.experimental_rerun()
+        st.rerun()
 
 # Cek status login dan tampilkan login page lebih awal
 if 'login' not in st.session_state:
@@ -62,8 +76,8 @@ if st.session_state.login is False:
     st.stop()
 
 # Judul utama
-st.markdown('<div class="main-title">🧸 Kalkulator Integral & Turunan 🧸</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">Masukkan fungsi matematikanya!🍓</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-title">🧸 Kalkulator Integral & Turunan 🧸 </div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">Masukkan fungsi matematikanya! 🍓</div>', unsafe_allow_html=True)
 
 # Input fungsi dari user
 expr_input = st.text_input("Masukkan fungsi aljabar (misalnya: x**2 + 3*x + 2)", value="x**2 + 2*x + 1")
@@ -94,7 +108,7 @@ try:
     st.pyplot(fig)
 
 except Exception as e:
-    st.error("Fungsi tidak valid. Coba periksa kembali input kamu yaa")
+    st.error("Fungsi tidak valid. Coba periksa kembali input kamu ya 🍓")
 
 # Tombol Logout
 logout_ui()
