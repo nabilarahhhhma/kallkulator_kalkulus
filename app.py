@@ -17,7 +17,7 @@ if "user" not in st.session_state:
 
 # --- Kalkulator Cute ---
 def kalkulator():
-    st.markdown("<h2>🎀 Kalkulator Integral & Turunan 🎀</h2>", unsafe_allow_html=True)
+    st.markdown("<h2>🐰 Kalkulator Integral & Turunan 🐰</h2>", unsafe_allow_html=True)
     fungsi_input = st.text_input("📌 Masukkan fungsi (contoh: x**2 + 2*x)", value="x**2 + 2*x")
     operasi = st.radio("✨ Pilih Operasi yang ingin dihitung:", ["Turunan", "Integral"])
     x_vals = np.linspace(-10, 10, 400)
@@ -64,7 +64,7 @@ def about():
 
 # --- Menu Tabs + Logout Sidebar ---
 def menu_tabs():
-    tab1, tab2 = st.tabs(["🧮 Kalkulator", "🎀 Tentang"])
+    tab1, tab2 = st.tabs(["🧮 Kalkulator", "🧸 Tentang"])
     with tab1:
         kalkulator()
     with tab2:
@@ -79,7 +79,7 @@ def menu_tabs():
 # --- App Routing ---
 if st.session_state.login:
     st.markdown(f"<div style='text-align:right;'>👑 Logged in as: <b>{st.session_state.user}</b></div>", unsafe_allow_html=True)
-    st.markdown("<h1 style='font-size: 36px;'>🎀✨ Cute Calculus App for Princess ✨🎀</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='font-size: 36px;'>🧁✨ kalkulator kalkulus ✨🧁</h1>", unsafe_allow_html=True)
     menu_tabs()
 else:
     login_form()
