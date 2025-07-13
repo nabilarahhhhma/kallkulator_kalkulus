@@ -19,7 +19,7 @@ if "user" not in st.session_state:
 def kalkulator():
     st.markdown("<h2>🐰 Kalkulator Integral & Turunan 🐰</h2>", unsafe_allow_html=True)
     fungsi_input = st.text_input("📌 Masukkan fungsi (contoh: x**2 + 2*x)", value="x**2 + 2*x")
-    operasi = st.radio("✨ Pilih Operasi yang ingin dihitung:", ["Turunan", "Integral Tak Tentu", "Integral Tentu"])
+    operasi = operasi = st.radio("✨ Pilih Operasi yang ingin dihitung:", ["Turunan", "Integral Tak Tentu", "Integral Tentu"])
     x_vals = np.linspace(-10, 10, 400)
 
     if fungsi_input:
