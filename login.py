@@ -12,7 +12,7 @@ user_db = {
 
 # --- Login Form ---
 def login_form():
-    st.markdown("<h2>🎀 Login yuu🎀</h2>", unsafe_allow_html=True)
+    st.markdown("<h2>🎀 Hallo, Selamat Datang! 🎀</h2>", unsafe_allow_html=True)
     username = st.text_input("👑 Username")
     password = st.text_input("🔒 Password", type="password")
     if st.button("✨ Login"):
