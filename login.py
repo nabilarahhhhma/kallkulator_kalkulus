@@ -13,7 +13,7 @@ user_db = {
 # --- Login Form ---
 def login_form():
     st.markdown("""
-        <h2 style='text-align:center;'> Hallo, Selamat Datang! </h2>
+        <h2 style='text-align:center;'> 🦩 Hallo, Selamat Datang! 🦩 </h2>
         <p style='text-align:center;'>Silakan masuk ke <b>Cute Calculus App</b> untuk memulai perhitunganmu!</p>
     """, unsafe_allow_html=True)
 
