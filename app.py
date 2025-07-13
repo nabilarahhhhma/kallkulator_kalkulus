@@ -55,7 +55,7 @@ def kalkulator():
 
 # --- Tentang Page ---
 def about():
-    st.markdown("### 🌸 Tentang Aplikasi Ini")
+    st.markdown("### 🧸 Tentang Aplikasi Ini 🧸")
 
     st.write("""
     Aplikasi ini dibuat oleh **Nabila Rahmadani** dari kelas **TI.24.C.1** 🩷  
@@ -75,7 +75,6 @@ def about():
     _“Math feels easier when it’s pretty! especially when there’s Jaehyun”_ 💅✨
     """)
 
-    st.image("https://i.pinimg.com/564x/f1/1d/b2/f11db2b76fef26795a27d0212041a203.jpg", width=250)
 
 # --- Menu Tabs + Logout Sidebar ---
 def menu_tabs():
