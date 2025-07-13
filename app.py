@@ -19,7 +19,7 @@ if "user" not in st.session_state:
 def kalkulator():
     st.markdown("<h2>🐰 Kalkulator Integral & Turunan 🐰</h2>", unsafe_allow_html=True)
     fungsi_input = st.text_input("📌 Masukkan fungsi (contoh: x**2 + 2*x)", value="x**2 + 2*x")
-    operasi = st.radio("✨ Pilih Operasi yang ingin dihitung:", ["Turunan", "Integral"])
+    operasi = st.radio("✨ Pilih Operasi yang ingin dihitung:", ["Turunan", "Integral Tak Tentu", "Integral Tentu"])
     x_vals = np.linspace(-10, 10, 400)
 
     if fungsi_input:
@@ -41,7 +41,7 @@ def kalkulator():
                 ax.legend()
                 st.pyplot(fig)
 
-            elif operasi == "Integral":
+            elif operasi == "Integral Tak Tentu":
                 hasil = integrate(fungsi, x)
                 st.latex(f"\\int {str(fungsi)}\\,dx = {str(hasil)} + C")
                 st.markdown("#### 📉 Grafik f(x)")
@@ -50,13 +50,34 @@ def kalkulator():
                 ax.legend()
                 st.pyplot(fig)
 
+            elif operasi == "Integral Tentu":
+                a = st.number_input("Masukkan batas bawah (a)", value=0.0)
+                b = st.number_input("Masukkan batas atas (b)", value=1.0)
+
+                integral_tak_tentu = integrate(fungsi, x)
+                F = lambdify(x, integral_tak_tentu, modules=["numpy"])
+
+                try:
+                    nilai_a = F(a)
+                    nilai_b = F(b)
+                    hasil_tentu = nilai_b - nilai_a
+
+                    st.latex(f"\\int_{{{a}}}^{{{b}}} {str(fungsi)}\\,dx = {hasil_tentu:.4f}")
+                    st.markdown("#### 📉 Grafik f(x)")
+                    fig, ax = plt.subplots()
+                    ax.plot(x_vals, y_asli, label="f(x)", color="#ff69b4")
+                    ax.fill_between(x_vals, y_asli, where=(x_vals >= a) & (x_vals <= b), color="#ffe6f2", alpha=0.5)
+                    ax.legend()
+                    st.pyplot(fig)
+                except Exception:
+                    st.error("Terjadi kesalahan saat menghitung integral tentu.")
+
         except Exception:
             st.error("🌧️ Fungsi tidak valid. Contoh valid: x**2 + 2*x")
 
 # --- Tentang Page ---
 def about():
     st.markdown("### 🧸 Tentang Aplikasi Ini 🧸")
-
     st.write("""
     Aplikasi ini dibuat oleh **Nabila Rahmadani** dari kelas **TI.24.C.1** 🩷  
     Menggunakan Python + Streamlit, aplikasi ini dirancang untuk menghitung turunan dan integral dengan cara **cepat, visual, dan pastinya cute!**
@@ -64,6 +85,7 @@ def about():
     📌 Fitur aplikasi:
     – Menghitung turunan otomatis  
     – Menghitung integral tak tentu  
+    – Menghitung integral tentu (baru!)  
     – Menampilkan grafik interaktif  
     – Tampilan pink pastel & aesthetic
 
@@ -74,7 +96,6 @@ def about():
 
     _“Math feels easier when it’s pretty! especially when there’s Jaehyun”_ 💅✨
     """)
-
 
 # --- Menu Tabs + Logout Sidebar ---
 def menu_tabs():
