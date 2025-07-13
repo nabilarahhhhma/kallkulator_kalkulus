@@ -13,7 +13,7 @@ def login_form():
     <div style='text-align: center;'>
         <img src='https://cdn-icons-png.flaticon.com/512/847/847969.png' width='80'>
     </div>
-    <h2 style='text-align:center;'>🎀 Hallo, Selamat Datang! 🎀</h2>
+    <h2 style='text-align:center;'>🦩 Hallo, Selamat Datang! 🦩</h2>
     <p style='text-align:center;'>Silakan masuk ke <b>Cute Calculus App</b> untuk memulai perhitunganmu!</p>
     """, unsafe_allow_html=True)
 
