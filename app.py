@@ -70,11 +70,10 @@ def menu_tabs():
     with tab2:
         about()
 
-    st.sidebar.markdown("## 🚪 Logout")
-    if st.sidebar.button("Keluar"):
-        st.session_state.login = False
-        st.session_state.user = ""
-        st.experimental_rerun()
+ if st.sidebar.button("Logout"):
+    st.session_state.login = False
+    st.session_state.user = ""
+    st.rerun()  # Ganti ini dari experimental_rerun
 
 # --- App Routing ---
 if st.session_state.login:
