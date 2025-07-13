@@ -64,16 +64,18 @@ def about():
 
 # --- Menu Tabs + Logout Sidebar ---
 def menu_tabs():
-    tab1, tab2 = st.tabs(["🧮 Kalkulator", "🧸 Tentang"])
+    tab1, tab2 = st.tabs(["🧮 Kalkulator", "🦩 Tentang"])
     with tab1:
         kalkulator()
     with tab2:
         about()
 
- if st.sidebar.button("Logout"):
-    st.session_state.login = False
-    st.session_state.user = ""
-    st.rerun()  # Ganti ini dari experimental_rerun
+    # Logout Sidebar (benar indentasinya!)
+    st.sidebar.markdown("## 🚪 Logout")
+    if st.sidebar.button("Logout ✨"):
+        st.session_state.login = False
+        st.session_state.user = ""
+        st.rerun()
 
 # --- App Routing ---
 if st.session_state.login:
