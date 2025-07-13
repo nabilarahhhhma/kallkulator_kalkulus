@@ -55,7 +55,7 @@ def kalkulator():
 
 # --- Tentang Page ---
 def about():
-    st.markdown("### 🌸 Tentang Aplikasi Queqet Ini")
+    st.markdown("### 🌸 Tentang Aplikasi Ini")
 
     st.write("""
     Aplikasi ini dibuat oleh **Nabila Rahmadani** dari kelas **TI.24.C.1** 🩷  
