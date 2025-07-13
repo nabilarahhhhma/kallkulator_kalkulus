@@ -3,7 +3,7 @@ from sympy import diff, integrate, sympify, lambdify
 import matplotlib.pyplot as plt
 import numpy as np
 from sympy.abc import x
-from auth import login_form, user_db
+from login import login_form, user_db
 
 # --- Load QUEQET CSS ---
 with open("style.css") as f:
