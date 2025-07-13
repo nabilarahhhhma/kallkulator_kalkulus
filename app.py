@@ -56,10 +56,25 @@ def kalkulator():
 # --- Tentang Page ---
 def about():
     st.markdown("### 🌸 Tentang Aplikasi Queqet Ini")
+
     st.write("""
-        Aplikasi ini dibuat dengan oleh **Nabila Rahmadani** dari kelas **TI.24.C.1** 
-        Menggunakan Python + Streamlit untuk menghitung turunan dan integral fungsi.  
+    Aplikasi ini dibuat oleh **Nabila Rahmadani** dari kelas **TI.24.C.1** 🩷  
+    Menggunakan Python + Streamlit, aplikasi ini dirancang untuk menghitung turunan dan integral dengan cara **cepat, visual, dan pastinya cute!**
+
+    📌 Fitur aplikasi:
+    – Menghitung turunan otomatis  
+    – Menghitung integral tak tentu  
+    – Menampilkan grafik interaktif  
+    – Tampilan pink pastel & aesthetic
+
+    Dibangun dengan:
+    – Python 🐍  
+    – Streamlit 🚀  
+    – SymPy & Matplotlib 📊
+
+    _“Math feels easier when it’s pretty! especially when there’s Jaehyun”_ 💅✨
     """)
+
     st.image("https://i.pinimg.com/564x/f1/1d/b2/f11db2b76fef26795a27d0212041a203.jpg", width=250)
 
 # --- Menu Tabs + Logout Sidebar ---
